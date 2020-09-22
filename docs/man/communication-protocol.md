@@ -32,8 +32,8 @@ GitHub.
 
 The Coaty libp2p binding builds upon peer-to-peer based communication without
 the need for a central broker or router component. Coaty communication events
-are transmitted via the [pubsub interfaces]
-(https://github.com/libp2p/specs/tree/master/pubsub) of the
+are transmitted via the [pubsub
+interfaces](https://github.com/libp2p/specs/tree/master/pubsub) of the
 [libp2p](https://libp2p.io/) network stack. A detailed explanation of libp2p
 pubsub concepts can be found
 [here](https://docs.libp2p.io/concepts/publish-subscribe/). The libp2p pubsub
