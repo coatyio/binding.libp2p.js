@@ -1,0 +1,258 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@coaty/binding.libp2p - v2.0.0</title>
+	<meta name="description" content="Documentation for @coaty/binding.libp2p - v2.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@coaty/binding.libp2p - v2.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@coaty/binding.libp2p - v2.0.0</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#coaty-js---libp2p-communication-binding" id="coaty-js---libp2p-communication-binding" style="color: inherit; text-decoration: none;">
+					<h1>Coaty JS - libp2p Communication Binding</h1>
+				</a>
+				<p><a href="https://coaty.io"><img src="https://img.shields.io/badge/Powered%20by-Coaty%202-FF8C00.svg" alt="Powered by Coaty 2"></a>
+					<a href="http://www.typescriptlang.org/"><img src="https://img.shields.io/badge/Source%20code-TypeScript-007ACC.svg" alt="TypeScript"></a>
+					<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+					<a href="https://conventionalcommits.org/"><img src="https://img.shields.io/badge/release-Conventional%20Commits-yellow.svg" alt="release"></a>
+				<a href="https://www.npmjs.com/package/@coaty/binding.libp2p"><img src="https://badge.fury.io/js/%40coaty%2Fbinding.libp2p.svg" alt="npm version"></a></p>
+				<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+					<h2>Table of Contents</h2>
+				</a>
+				<ul>
+					<li><a href="#introduction">Introduction</a></li>
+					<li><a href="#how-to-use">How to use</a></li>
+					<li><a href="#contributing">Contributing</a></li>
+					<li><a href="#license">License</a></li>
+				</ul>
+				<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
+					<h2>Introduction</h2>
+				</a>
+				<p>This binding package provides a <a href="https://coaty.io">Coaty</a> communication binding
+					for transmitting Coaty communication events via the <a href="https://libp2p.io/">libp2p</a>
+					network stack using its pubsub interfaces. This binding builds upon peer-to-peer
+				based communication without the need for a central broker or router component.</p>
+				<p>This package comes with complete <a href="https://coatyio.github.io/binding.libp2p.js/api/index.html">API
+				documentation</a>.</p>
+				<p>This package is considered the <em>reference implementation</em> for all
+					language-specific Coaty libp2p bindings. It includes the specification of the
+					<a href="https://coatyio.github.io/binding.libp2p.js/man/communication-protocol/">Coaty libp2p communication
+					protocol</a>
+				which must be implemented by all libp2p bindings in order to be interoperable.</p>
+				<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
+					<h2>How to use</h2>
+				</a>
+				<p>You can install the latest version of this binding package in your Coaty
+				application as follows:</p>
+				<pre><code class="language-sh">npm install @coaty/binding.libp2p</code></pre>
+				<p>This npm package targets Coaty projects using ECMAScript version <code>es6</code> and
+					module format <code>commonjs</code>. It runs in Node.js 12 or higher. Support for browsers
+				is work in progress.</p>
+				<p>Ensure to always install a binding version that is <em>compatible</em> with the
+					<code>@coaty/core</code> framework version you are using in your application, i.e. both
+				packages must have the same major version.</p>
+				<p>Next, declare the libp2p binding in your Coaty agent container configuration as
+				follows:</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Libp2pBinding } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@coaty/binding.libp2p&quot;</span>;
+
+<span class="hljs-keyword">const</span> configuration: Configuration = {
+    ...
+    communication: {
+        binding: Libp2pBinding.withOptions({
+            ...
+        }),
+        ...
+    },
+    ...
+};</code></pre>
+				<p>Available binding options are described in the <a href="https://coatyio.github.io/binding.libp2p.js/api/interfaces/libp2pbindingoptions.html">API
+				documentation</a>.</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>If you like this binding, please consider &#x2605; starring <a href="https://github.com/coatyio/binding.libp2p.js">the project on
+					github</a>. Contributions are welcome
+				and appreciated.</p>
+				<p>The recommended practice described in the <a href="https://github.com/coatyio/coaty-js/blob/master/CONTRIBUTING.md">contribution
+					guidelines</a> of
+				the Coaty JS framework also applies here.</p>
+				<p>To release a new version of this package, follow these steps:</p>
+				<ol>
+					<li><code>npm run cut-release</code> - prepare a new release, including automatic
+					versioning, documentation generation, conventional changelog, and tagging.</li>
+					<li><code>npm run push-release</code> - push the prepared release to the remote git repo</li>
+					<li><code>npm run publish-release</code> - publish the package on npm registry.</li>
+				</ol>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>Code and documentation copyright 2020 Siemens AG.</p>
+				<p>Code is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+				<p>Documentation is licensed under a
+				<a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/livelinessoperation.html" class="tsd-kind-icon">Liveliness<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/libp2pbinding.html" class="tsd-kind-icon">Libp2p<wbr>Binding</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/libp2ptopic.html" class="tsd-kind-icon">Libp2p<wbr>Topic</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/livelinessservice.html" class="tsd-kind-icon">Liveliness<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/libp2pbindingoptions.html" class="tsd-kind-icon">Libp2p<wbr>Binding<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/libp2pevent.html" class="tsd-kind-icon">Libp2p<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/livelinessmessage.html" class="tsd-kind-icon">Liveliness<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/publicationitem.html" class="tsd-kind-icon">Publication<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/subscriptionitem.html" class="tsd-kind-icon">Subscription<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#lastwill" class="tsd-kind-icon">Last<wbr>Will</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2p" class="tsd-kind-icon">Libp2p</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2pbootstrap" class="tsd-kind-icon">Libp2p<wbr>Bootstrap</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2pfloodsub" class="tsd-kind-icon">Libp2p<wbr>Floodsub</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2pmdns" class="tsd-kind-icon">Libp2p<wbr>Mdns</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2pmplex" class="tsd-kind-icon">Libp2p<wbr>Mplex</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2ppeerid" class="tsd-kind-icon">Libp2p<wbr>Peer<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2psecio" class="tsd-kind-icon">Libp2p<wbr>Secio</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#libp2ptcp" class="tsd-kind-icon">Libp2p<wbr>Tcp</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#peerid" class="tsd-kind-icon">Peer<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#uint8arraysfromstring" class="tsd-kind-icon">Uint8<wbr>Arrays<wbr>From<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#uint8arraystostring" class="tsd-kind-icon">Uint8<wbr>Arrays<wbr>ToString</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

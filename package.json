@@ -1,0 +1,78 @@
+{
+    "name": "@coaty/binding.libp2p",
+    "version": "2.0.0",
+    "description": "Coaty libp2p communication binding for Node.js",
+    "homepage": "https://coaty.io",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/coatyio/binding.libp2p.js"
+    },
+    "readme": "README.md",
+    "scripts": {
+        "build": "gulp build",
+        "lint": "gulp lint",
+        "lint:fix": "gulp lint:fix",
+        "doc": "gulp doc",
+        "version-release": "coaty-scripts version-release",
+        "cut-release": "coaty-scripts version-release %1 && gulp build && gulp doc && coaty-scripts cut-release %2",
+        "push-release": "coaty-scripts push-release",
+        "publish-release": "coaty-scripts publish-release"
+    },
+    "keywords": [
+        "Coaty",
+        "communication",
+        "binding",
+        "libp2p",
+        "p2p",
+        "peer-to-peer",
+        "pubsub",
+        "floodsub",
+        "Node.js",
+        "javascript",
+        "typescript"
+    ],
+    "author": "Siemens AG",
+    "license": "MIT",
+    "maintainers": [
+        {
+            "name": "Hubertus Hohl",
+            "email": "hubertus.hohl@siemens.com"
+        },
+        {
+            "name": "Markus Sauer",
+            "email": "markussauer@siemens.com"
+        }
+    ],
+    "bugs": {
+        "url": "https://github.com/coatyio/binding.p2p.js/issues"
+    },
+    "dependencies": {
+        "@coaty/core": "^2.3.0",
+        "it-pipe": "^1.1.0",
+        "libp2p": "^0.29.0",
+        "libp2p-bootstrap": "^0.12.1",
+        "libp2p-floodsub": "^0.23.1",
+        "libp2p-mdns": "^0.15.0",
+        "libp2p-mplex": "^0.10.0",
+        "libp2p-secio": "^0.13.1",
+        "libp2p-tcp": "^0.15.1",
+        "peer-id": "^0.14.1",
+        "uint8arrays": "^1.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^14.11.2",
+        "conventional-changelog": "^3.1.23",
+        "conventional-recommended-bump": "^6.0.10",
+        "fs-extra": "^9.0.1",
+        "gulp": "^4.0.2",
+        "gulp-tslint": "^8.1.4",
+        "gulp-typedoc": "^2.2.5",
+        "gulp-typescript": "^5.0.1",
+        "tslint": "^5.20.1",
+        "typedoc": "^0.19.2",
+        "typescript": "^4.0.3"
+    },
+    "engines": {
+        "node": ">=12.0.0"
+    }
+}
